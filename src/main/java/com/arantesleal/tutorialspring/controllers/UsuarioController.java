@@ -3,9 +3,7 @@ package com.arantesleal.tutorialspring.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.arantesleal.tutorialspring.entities.Usuario;
 import com.arantesleal.tutorialspring.repositories.UsuarioRepository;
@@ -17,9 +15,21 @@ public class UsuarioController {
     private UsuarioRepository repository;
 
     // Busca todos usuarios no banco de dados
-    @GetMapping // verbo da requisicao http
+    @GetMapping
     public List<Usuario> buscarTodos() {
         List<Usuario> resultado = repository.findAll();
+        return resultado;
+    }
+
+    @GetMapping(value = "/{id}") // acrescenta caminho na url
+    public Usuario buscarUsuario(@PathVariable Long id) {
+        Usuario resultado = repository.findById(id).get();
+        return resultado;
+    }
+
+    @PostMapping
+    public Usuario inserirUsuario(@RequestBody Usuario usuario) {
+        Usuario resultado = repository.save(usuario);
         return resultado;
     }
 }
