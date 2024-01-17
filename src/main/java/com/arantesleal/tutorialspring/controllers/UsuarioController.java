@@ -17,7 +17,7 @@ public class UsuarioController {
     private UsuarioRepository repository;
 
     // Busca todos usuarios no banco de dados
-    @GetMapping // define verbo da requisicao http
+    @GetMapping // verbo da requisicao http
     public List<Usuario> buscarTodos() {
         List<Usuario> resultado = repository.findAll();
         return resultado;

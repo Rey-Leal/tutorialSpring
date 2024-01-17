@@ -5,4 +5,4 @@ Aplição padrão MVC com uso de classes e acesso a API Rest:
 * Java
 * Spring Boot
 * API Rest
-* Banco H2 para testes
+* Banco H2 para testes locais
