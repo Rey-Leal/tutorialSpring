@@ -3,6 +3,6 @@
 ## Introducao
 Aplição padrão MVC com uso de classes e acesso a API Rest:
 * Java
-* Springbot
+* Spring Boot
 * API Rest
 * Banco H2 para testes
